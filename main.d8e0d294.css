@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700|Oswald);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 html {
@@ -316,9 +318,12 @@ html {
 }
 
 body {
-    font-family: Lato, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.58;
+    /* font-family: Lato, Helvetica, Arial, sans-serif; */
+    font-family: 'Merriweather', serif;
+    /* font-size: 16px;
+    line-height: 1.58; */
+    font-size: 15px;
+    line-height: 1.7;
     color: #555;
     background-color: #fff
 }
@@ -333,13 +338,13 @@ textarea {
 }
 
 a {
-    color: #ff0060;
+    color: #8589c2;
     text-decoration: none
 }
 
 a:focus,
 a:hover {
-    color: #b30043;
+    color: #8589c2;
     text-decoration: underline
 }
 
@@ -428,8 +433,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Oswald, Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    /* font-family: Oswald, Helvetica, Arial, sans-serif; */
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    font-weight: 600;
     line-height: 1.1;
     color: #000
 }
@@ -606,12 +612,12 @@ mark {
 }
 
 .text-primary {
-    color: #ff0060
+    color:  #8589c2
 }
 
 a.text-primary:focus,
 a.text-primary:hover {
-    color: #cc004d
+    color:  #8589c2
 }
 
 .text-success {
@@ -5830,7 +5836,8 @@ body.white {
 
 .h5,
 h5 {
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    /* font-family: Lato, Helvetica, Arial, sans-serif; */
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
     font-weight: 700
 }
 

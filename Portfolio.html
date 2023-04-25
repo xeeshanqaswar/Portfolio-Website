@@ -51,12 +51,14 @@
               <h3 class="h5 date-title">Description</h3>
               <div id ="project-decription"> </div>
 
+              <br>
               <h3 class="h5 date-title">Technology Stack</h3>
               <pre id ="tech-Stack"></pre>
 
+              <br>
               <h3 class="h5 date-title">Showcase</h3>
               <a id ="demo-file" href="#">Download File</a> &nbsp; &nbsp;
-              <a id ="onlinePlayableUrl" href="#" target="_blank">Try out Application</a>
+              <a id ="onlinePlayableUrl" href="#">Try out Application</a>
               
               <div class="row">
                 
@@ -95,7 +97,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p><img src="./assets/images/mashup-icon.svg" alt=""></p>
+        <p>
+          <a class="fa-icon fa-icon-2x">
+            <i class="fa fa-trophy" style="font-size: 35px;"></i>
+          </a>
+        </p>
         
         <p>Ready to Level Up Your Gaming Experience? Let's Connect!</p>
         <p>
@@ -148,9 +154,10 @@
   console.log(pageData["demoLink"]);
   if (pageData["demoLink"] != '') {
     portfolioLink.setAttribute("href", pageData["demoLink"]);
+    portfolioLink.setAttribute("target","_blank");
   }
   else{
-    portfolioLink.setAttribute("href", "");
+    portfolioLink.setAttribute("href", '');
     var oldHtml = portfolioLink.innerHTML;
     portfolioLink.innerHTML = "<strike>"+oldHtml+"</strike>" +" (Link can't be furnished because of signed NDA)";
   }

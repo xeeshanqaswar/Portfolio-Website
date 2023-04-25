@@ -55,7 +55,8 @@
               <pre id ="tech-Stack"></pre>
 
               <h3 class="h5 date-title">Showcase</h3>
-              <a id ="demo-Link" href="#">Try out Application</a>
+              <a id ="demo-file" href="#">Download File</a> &nbsp; &nbsp;
+              <a id ="onlinePlayableUrl" href="#" target="_blank">Try out Application</a>
               
               <div class="row">
                 
@@ -121,36 +122,45 @@
      scrollRevelation('.card');
   });
 
-  // Change portfolio page name
-
-  window.onload = function(){
-    
-    // Fetching Data from other page
-    var pageData = JSON.parse(sessionStorage.getItem("portfolioData"));
-    
-    // Updating Content 
-    document.getElementById("projectName").innerText = pageData["projectName"];
-    document.getElementById("projectTitle").innerText = pageData["projectTitle"];
-    document.getElementById("project-decription").innerHTML = pageData["projectDescription"];
-    document.getElementById("tech-Stack").innerHTML = pageData["techStack"];
-    
-    if (pageData["demoLink"] != "") {
-      document.getElementById("demo-Link").setAttribute("href", "./assets/Projects/"+pageData["projectPath"]+"/"+pageData["demoLink"]);
-    }
-    else{
-      document.getElementById("demo-Link").setAttribute("href", "");
-      var oldHtml = document.getElementById("demo-Link").innerHTML;
-      document.getElementById("demo-Link").innerHTML = "<strike>"+oldHtml+"</strike>" +" (Link can't be furnished because of signed NDA)";
-    }
-
-    // Updating Images
-    document.getElementById('Portfolio-Main').src = "./assets/Projects/"+pageData["projectPath"]+"/main.gif";
-    document.getElementById("Portfolio-1").src = "./assets/Projects/"+pageData["projectPath"]+"/1.jpg";
-    document.getElementById("Portfolio-2").src = "./assets/Projects/"+pageData["projectPath"]+"/2.jpg";
-    document.getElementById("Portfolio-3").src = "./assets/Projects/"+pageData["projectPath"]+"/3.jpg";
-    document.getElementById("Portfolio-4").src = "./assets/Projects/"+pageData["projectPath"]+"/4.jpg";
-
+  // Fetching Data from other page
+  var portfolioLink =  document.getElementById("onlinePlayableUrl");
+  console.log(portfolioLink.getAttribute("href"));
+  var localFile =  document.getElementById("demo-file");
+  var pageData = JSON.parse(sessionStorage.getItem("portfolioData"));
+  
+  // Updating Content 
+  document.getElementById("projectName").innerText = pageData["projectName"];
+  document.getElementById("projectTitle").innerText = pageData["projectTitle"];
+  document.getElementById("project-decription").innerHTML = pageData["projectDescription"];
+  document.getElementById("tech-Stack").innerHTML = pageData["techStack"];
+  
+  // Updating File URL
+  if (pageData["localFileName"] != '') { 
+    localFile.setAttribute("href", "./assets/Projects/"+pageData["projectPath"]+"/"+pageData["localFileName"]);
   }
+  else{
+    localFile.setAttribute("href", "");
+    var oldHtml = localFile.innerHTML;
+    localFile.innerHTML = "<strike>"+oldHtml+"</strike>";
+  }
+
+  // Updating Online URL
+  console.log(pageData["demoLink"]);
+  if (pageData["demoLink"] != '') {
+    portfolioLink.setAttribute("href", pageData["demoLink"]);
+  }
+  else{
+    portfolioLink.setAttribute("href", "");
+    var oldHtml = portfolioLink.innerHTML;
+    portfolioLink.innerHTML = "<strike>"+oldHtml+"</strike>" +" (Link can't be furnished because of signed NDA)";
+  }
+
+  // Updating Images
+  document.getElementById('Portfolio-Main').src = "./assets/Projects/"+pageData["projectPath"]+"/main.gif";
+  document.getElementById("Portfolio-1").src = "./assets/Projects/"+pageData["projectPath"]+"/1.jpg";
+  document.getElementById("Portfolio-2").src = "./assets/Projects/"+pageData["projectPath"]+"/2.jpg";
+  document.getElementById("Portfolio-3").src = "./assets/Projects/"+pageData["projectPath"]+"/3.jpg";
+  document.getElementById("Portfolio-4").src = "./assets/Projects/"+pageData["projectPath"]+"/4.jpg";
 
 </script>
 

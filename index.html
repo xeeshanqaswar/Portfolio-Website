@@ -87,7 +87,8 @@
                 data-projectPath = "Space"  
                 data-projectName ="Singapore Explorer" 
                 data-projectTitle="Spatial Performance Assessment for Cognitive Evaluation"
-                data-fileName ="">
+                data-localFileName =""
+                data-onlineUrl = "">
 
                   <img src="#"  class="img-responsive" alt="">
                   <h3 class="h5">Placeholder Heading</h3>
@@ -104,7 +105,8 @@
                 data-projectPath = "DuelX"  
                 data-projectName ="DuelX" 
                 data-projectTitle="2D multiplayer board game" 
-                data-fileName ="Duel X.apk">
+                data-localFileName ="Duel X.apk"
+                data-onlineUrl = "">
                   
                   <img src="#"  class="img-responsive" alt="">
                   <h3 class="h5">Placeholder Heading</h3>
@@ -112,6 +114,44 @@
                     <p>Its a 2d multiplayer board game developed for Mobile (iOS and Android), Browsers (HTML5) for mobile and PC. It is an educational number game, helping students advance in multiplication and memorization of tables.</p>
                   </div>
                   <p class="tech-Stack"  style="display: none;">#Unity  #Multiplayer  #AI</p>
+
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="#" id="portfolio-card" 
+                data-projectPath = "DuelX"  
+                data-projectName ="DuelX" 
+                data-projectTitle="2D multiplayer board game" 
+                data-localFileName ="Duel X.apk"
+                data-onlineUrl = "">
+                  
+                  <img src="#"  class="img-responsive" alt="">
+                  <h3 class="h5">Placeholder Heading</h3>
+                  <div class="project-decription" style="display: none;">
+                    <p>Its a 2d multiplayer board game developed for Mobile (iOS and Android), Browsers (HTML5) for mobile and PC. It is an educational number game, helping students advance in multiplication and memorization of tables.</p>
+                  </div>
+                  <p class="tech-Stack"  style="display: none;">#Unity  #Multiplayer  #AI</p>
+
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="#" id="portfolio-card" 
+                data-projectPath = "SpecialOps"  
+                data-projectName ="Special Ops FPS Gun Strike 3d" 
+                data-projectTitle="3rd person action shooting" 
+                data-localFileName =""
+                data-onlineUrl = "https://play.google.com/store/apps/details?id=com.was.cover.shooter.critical.strike.force">
+                  
+                  <img src="#"  class="img-responsive" alt="">
+                  <h3 class="h5">Placeholder Heading</h3>
+                  <div class="project-decription" style="display: none;">
+                    <p>3rd person action shooting game that is perfect for fans of the shooter genre. Developed using Unity.</p>
+                    <p>players take on the role of a special ops agent tasked with completing a series of challenging missions. 
+                      With a variety of weapons at their disposal, players must use their tactical skills and quick reflexes to take down enemy forces and complete objectives.</p>
+                  </div>
+                  <p class="tech-Stack"  style="display: none;">#Unity</p>
 
                 </a>
               </div>
@@ -236,7 +276,8 @@ window.onload
     pageData["projectTitle"] = event.target.parentNode.getAttribute("data-projectTitle");
     pageData["projectDescription"] = event.target.parentNode.getElementsByClassName("project-decription")[0].innerHTML;
     pageData["techStack"] = event.target.parentNode.getElementsByClassName("tech-Stack")[0].innerHTML;
-    pageData["demoLink"] = event.target.parentNode.getAttribute("data-fileName");
+    pageData["localFileName"] = event.target.parentNode.getAttribute("data-localFileName");
+    pageData["demoLink"] = event.target.parentNode.getAttribute("data-onlineUrl");
 
     sessionStorage.setItem("portfolioData", JSON.stringify(pageData));
     window.location.replace("Portfolio.html");

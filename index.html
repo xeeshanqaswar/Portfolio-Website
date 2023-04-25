@@ -13,7 +13,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
+  <!-- <link href="./assets/favicon.ico" rel="icon"> -->
 
   <title>Zeeshan Qaswar</title>  
 
@@ -82,14 +82,37 @@
             
             <div class="row">
 
-              <div class="col-md-4">
-                <a href="#" id="portfolio-card" data-projectPath = "Space"  data-projectName ="SPACE" data-projectTitle="Spatial Performance Assessment for Cognitive Evaluation">
-                  <img src="./assets/images/img-02.jpg"  class="img-responsive" alt="">
-                  <h3 class="h5">Space</h3>
-                  <div id="project-decription" style="display: none;">
-                    <p>asdas</p>
-                    <p>asdas</p>
+              <div class="col-md-6">
+                <a href="#" id="portfolio-card" 
+                data-projectPath = "Space"  
+                data-projectName ="Singapore Explorer" 
+                data-projectTitle="Spatial Performance Assessment for Cognitive Evaluation"
+                data-fileName ="">
+
+                  <img src="#"  class="img-responsive" alt="">
+                  <h3 class="h5">Placeholder Heading</h3>
+                  <div class="project-decription" style="display: none;">
+                    <p>Its a 2d multiplayer board game developed for Mobile (iOS and Android), Browsers (HTML5) for mobile and PC. It is an educational number game, helping students advance in multiplication and memorization of tables.</p>
                   </div>
+                  <p class="tech-Stack"  style="display: none;">#Unity  #AI</p>
+
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="#" id="portfolio-card" 
+                data-projectPath = "DuelX"  
+                data-projectName ="DuelX" 
+                data-projectTitle="2D multiplayer board game" 
+                data-fileName ="Duel X.apk">
+                  
+                  <img src="#"  class="img-responsive" alt="">
+                  <h3 class="h5">Placeholder Heading</h3>
+                  <div class="project-decription" style="display: none;">
+                    <p>Its a 2d multiplayer board game developed for Mobile (iOS and Android), Browsers (HTML5) for mobile and PC. It is an educational number game, helping students advance in multiplication and memorization of tables.</p>
+                  </div>
+                  <p class="tech-Stack"  style="display: none;">#Unity  #Multiplayer  #AI</p>
+
                 </a>
               </div>
 
@@ -160,7 +183,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p><img src="./assets/images/mashup-icon.svg" alt=""></p>
+        <p>
+          <a class="fa-icon fa-icon-2x">
+            <i class="fa fa-trophy" style="font-size: 35px;"></i>
+          </a>
+        </p>
         
         <p>Ready to Level Up Your Gaming Experience? Let's Connect!</p>
         <p>
@@ -184,6 +211,9 @@
 
 <script>
   
+window.onload
+{
+
   document.addEventListener("DOMContentLoaded", function (event) {
      scrollRevelation('.card');
   });
@@ -193,6 +223,9 @@
   // Loop through the elements and do something with them
   for (var i = 0; i < elementsWithId.length; i++) {
     elementsWithId[i].addEventListener("click", PortfolioClicked);
+    var projectPath = elementsWithId[i].getAttribute("data-projectPath");
+    elementsWithId[i].getElementsByClassName("img-responsive")[0].src = "./assets/Projects/"+projectPath+"/thumbnail.jpg";
+    elementsWithId[i].getElementsByClassName("h5")[0].innerText = elementsWithId[i].getAttribute("data-projectName");
   }
 
   function PortfolioClicked(event){
@@ -201,12 +234,15 @@
     pageData["projectPath"] = event.target.parentNode.getAttribute("data-projectPath");
     pageData["projectName"] = event.target.parentNode.getAttribute("data-projectName");
     pageData["projectTitle"] = event.target.parentNode.getAttribute("data-projectTitle");
-    pageData["projectDescription"] = document.getElementById("project-decription").innerHTML;
-
+    pageData["projectDescription"] = event.target.parentNode.getElementsByClassName("project-decription")[0].innerHTML;
+    pageData["techStack"] = event.target.parentNode.getElementsByClassName("tech-Stack")[0].innerHTML;
+    pageData["demoLink"] = event.target.parentNode.getAttribute("data-fileName");
 
     sessionStorage.setItem("portfolioData", JSON.stringify(pageData));
     window.location.replace("Portfolio.html");
   }
+
+}
 
 </script>
 

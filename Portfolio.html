@@ -13,7 +13,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
+  <!-- <link href="./assets/favicon.ico" rel="icon"> -->
 
   <title>Zeeshan Qaswar</title>  
 
@@ -49,37 +49,37 @@
               
               <br>
               <h3 class="h5 date-title">Description</h3>
-              <div id ="projectDescription">
-                <p>I worked as a Software Engineer, specializing in Unity game development. 
-                  Working as part of a team, I collaborated with my colleagues to create engaging and immersive gaming experiences for our clients.</p>
-              </div>
+              <div id ="project-decription"> </div>
 
-                <h3 class="h5 date-title">Technology Stack</h3>
-                <p>#Unity</p>
+              <h3 class="h5 date-title">Technology Stack</h3>
+              <pre id ="tech-Stack"></pre>
+
+              <h3 class="h5 date-title">Showcase</h3>
+              <a id ="demo-Link" href="#">Try out Application</a>
               
-                <div class="row">
-                  
-                  <div class="col-md-6">
-                    <br>
-                    <img src="./assets/images/img-02.jpg" project-Name ="Space" id="Portfolio-1" class="img-responsive" alt="">
-                  </div>
-
-                  <div class="col-md-6">
-                    <br>
-                    <img src="./assets/images/img-03.jpg" class="img-responsive" id="Portfolio-2" alt="">
-                  </div>
-
-                  <div class="col-md-6">
-                    <br>
-                    <img src="./assets/images/img-02.jpg" project-Name ="Space" id="Portfolio-3" class="img-responsive" alt="">
-                  </div>
-
-                  <div class="col-md-6">
-                    <br>
-                    <img src="./assets/images/img-03.jpg" class="img-responsive" id="Portfolio-4" alt="">
-                  </div>
-    
+              <div class="row">
+                
+                <div class="col-md-6">
+                  <br>
+                  <img src="#" project-Name ="Space" id="Portfolio-1" class="img-responsive" alt="">
                 </div>
+
+                <div class="col-md-6">
+                  <br>
+                  <img src="#" class="img-responsive" id="Portfolio-2" alt="">
+                </div>
+
+                <div class="col-md-6">
+                  <br>
+                  <img src="#" project-Name ="Space" id="Portfolio-3" class="img-responsive" alt="">
+                </div>
+
+                <div class="col-md-6">
+                  <br>
+                  <img src="#" class="img-responsive" id="Portfolio-4" alt="">
+                </div>
+  
+              </div>
 
             </div>
           </div>
@@ -131,7 +131,17 @@
     // Updating Content 
     document.getElementById("projectName").innerText = pageData["projectName"];
     document.getElementById("projectTitle").innerText = pageData["projectTitle"];
-    document.getElementById("projectDescription").innerHTML = pageData["projectDescription"];
+    document.getElementById("project-decription").innerHTML = pageData["projectDescription"];
+    document.getElementById("tech-Stack").innerHTML = pageData["techStack"];
+    
+    if (pageData["demoLink"] != "") {
+      document.getElementById("demo-Link").setAttribute("href", "./assets/Projects/"+pageData["projectPath"]+"/"+pageData["demoLink"]);
+    }
+    else{
+      document.getElementById("demo-Link").setAttribute("href", "");
+      var oldHtml = document.getElementById("demo-Link").innerHTML;
+      document.getElementById("demo-Link").innerHTML = "<strike>"+oldHtml+"</strike>" +" (Link can't be furnished because of signed NDA)";
+    }
 
     // Updating Images
     document.getElementById('Portfolio-Main').src = "./assets/Projects/"+pageData["projectPath"]+"/main.gif";

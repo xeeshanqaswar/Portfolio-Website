@@ -83,39 +83,14 @@
             <div class="row">
 
               <div class="col-md-4">
-                <img src="./assets/images/img-02.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Amelia App</h3>
-                <p>June 2017</p>
-              </div>
-
-              <div class="col-md-4">
-                <img src="./assets/images/img-03.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Portland</h3>
-                <p>March 2017</p>
-              </div>
-
-              <div class="col-md-4">
-                <img src="./assets/images/img-04.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Denz for Nilon</h3>
-                <p>Jan 2017</p>
-              </div>
-              
-              <div class="col-md-4">
-                <img src="./assets/images/img-02.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Amelia App</h3>
-                <p>June 2017</p>
-              </div>
-
-              <div class="col-md-4">
-                <img src="./assets/images/img-03.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Portland</h3>
-                <p>March 2017</p>
-              </div>
-
-              <div class="col-md-4">
-                <img src="./assets/images/img-04.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Denz for Nilon</h3>
-                <p>Jan 2017</p>
+                <a href="#" id="portfolio-card" data-projectPath = "Space"  data-projectName ="SPACE" data-projectTitle="Spatial Performance Assessment for Cognitive Evaluation">
+                  <img src="./assets/images/img-02.jpg"  class="img-responsive" alt="">
+                  <h3 class="h5">Space</h3>
+                  <div id="project-decription" style="display: none;">
+                    <p>asdas</p>
+                    <p>asdas</p>
+                  </div>
+                </a>
               </div>
 
             </div>
@@ -208,11 +183,30 @@
 </footer>
 
 <script>
+  
   document.addEventListener("DOMContentLoaded", function (event) {
      scrollRevelation('.card');
   });
 
-  // Change portfolio page name
+  var elementsWithId = document.querySelectorAll("#portfolio-card");
+
+  // Loop through the elements and do something with them
+  for (var i = 0; i < elementsWithId.length; i++) {
+    elementsWithId[i].addEventListener("click", PortfolioClicked);
+  }
+
+  function PortfolioClicked(event){
+
+    var pageData = {};
+    pageData["projectPath"] = event.target.parentNode.getAttribute("data-projectPath");
+    pageData["projectName"] = event.target.parentNode.getAttribute("data-projectName");
+    pageData["projectTitle"] = event.target.parentNode.getAttribute("data-projectTitle");
+    pageData["projectDescription"] = document.getElementById("project-decription").innerHTML;
+
+
+    sessionStorage.setItem("portfolioData", JSON.stringify(pageData));
+    window.location.replace("Portfolio.html");
+  }
 
 </script>
 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+
+  <title>Zeeshan Qaswar</title>  
+
+<link href="./main.d8e0d294.css" rel="stylesheet"></head>
+
+<body class="">
+
+<!-- Add your content of header -->
+<div class="background-color-layer" "></div> 
+<!-- style="background-image: url('assets/images/img-01.jpg') -->
+<main class="content-wrapper">
+  <header class="white-text-container section-container">
+    <div class="text-center">
+      <h1 id ="projectName">Project Name</h1>
+      <p  id ="projectTitle">Project subtitle</p>
+    </div>
+  </header>
+
+
+
+<!-- Add your site or app content here -->
+ 
+ <div class="container">
+   <div class="row">
+     <div class="col-xs-12">
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="work-experience">
+              
+              <p><img src="./assets/Projects/Space/thumbnail.jpg" alt="" id="Portfolio-Main" width="100%"></p>
+              
+              <br>
+              <h3 class="h5 date-title">Description</h3>
+              <div id ="projectDescription">
+                <p>I worked as a Software Engineer, specializing in Unity game development. 
+                  Working as part of a team, I collaborated with my colleagues to create engaging and immersive gaming experiences for our clients.</p>
+              </div>
+
+                <h3 class="h5 date-title">Technology Stack</h3>
+                <p>#Unity</p>
+              
+                <div class="row">
+                  
+                  <div class="col-md-6">
+                    <br>
+                    <img src="./assets/images/img-02.jpg" project-Name ="Space" id="Portfolio-1" class="img-responsive" alt="">
+                  </div>
+
+                  <div class="col-md-6">
+                    <br>
+                    <img src="./assets/images/img-03.jpg" class="img-responsive" id="Portfolio-2" alt="">
+                  </div>
+
+                  <div class="col-md-6">
+                    <br>
+                    <img src="./assets/images/img-02.jpg" project-Name ="Space" id="Portfolio-3" class="img-responsive" alt="">
+                  </div>
+
+                  <div class="col-md-6">
+                    <br>
+                    <img src="./assets/images/img-03.jpg" class="img-responsive" id="Portfolio-4" alt="">
+                  </div>
+    
+                </div>
+
+            </div>
+          </div>
+        </div>
+        
+     </div>
+   </div>
+ </div>
+
+</main>
+<footer class="footer-container white-text-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p><img src="./assets/images/mashup-icon.svg" alt=""></p>
+        
+        <p>Ready to Level Up Your Gaming Experience? Let's Connect!</p>
+        <p>
+          <a class="fa-icon fa-icon-2x" target="_blank"  href="https://www.linkedin.com/in/zeolion/" title="">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" target="_blank"  href="https://github.com/xeeshanqaswar" title="">
+            <i class="fa fa-github"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" target="_blank"  href="https://zeeshanqaswar.itch.io/" title="">
+            <i class="fa fa-gamepad"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="mailto:xeeshanqaswar@gmail.com" title="">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     scrollRevelation('.card');
+  });
+
+  // Change portfolio page name
+
+  window.onload = function(){
+    
+    // Fetching Data from other page
+    var pageData = JSON.parse(sessionStorage.getItem("portfolioData"));
+    
+    // Updating Content 
+    document.getElementById("projectName").innerText = pageData["projectName"];
+    document.getElementById("projectTitle").innerText = pageData["projectTitle"];
+    document.getElementById("projectDescription").innerHTML = pageData["projectDescription"];
+
+    // Updating Images
+    document.getElementById('Portfolio-Main').src = "./assets/Projects/"+pageData["projectPath"]+"/main.gif";
+    document.getElementById("Portfolio-1").src = "./assets/Projects/"+pageData["projectPath"]+"/1.jpg";
+    document.getElementById("Portfolio-2").src = "./assets/Projects/"+pageData["projectPath"]+"/2.jpg";
+    document.getElementById("Portfolio-3").src = "./assets/Projects/"+pageData["projectPath"]+"/3.jpg";
+    document.getElementById("Portfolio-4").src = "./assets/Projects/"+pageData["projectPath"]+"/4.jpg";
+
+  }
+
+</script>
+
+<script type="text/javascript" src="./main.bc58148c.js"></script></body>
+
+</html>

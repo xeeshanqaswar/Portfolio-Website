@@ -79,96 +79,7 @@
         <div class="card">
           <div class="card-block">
             <h2>Projects</h2>
-            
-            <div class="row">
-
-              <div class="col-md-6">
-                <a href="#" id="portfolio-card" 
-                data-projectPath = "Space"  
-                data-projectName ="Singapore Explorer" 
-                data-projectTitle="Spatial Performance Assessment for Cognitive Evaluation"
-                data-localFileName =""
-                data-onlineUrl = "">
-
-                  <img src="#"  class="img-responsive" alt="">
-                  <h3 class="h5">Placeholder Heading</h3>
-                  <div class="project-decription" style="display: none;">
-                    <p>"SPACE" is an innovative game designed using Unity that I developed for the Singapore-ETH Centre.
-                      This game is specifically designed to detect different levels of cognitive impairment. 
-                      The game involves a series of spatial tasks that tap into different aspects of the player's spatial knowledge.</p>
-
-                    <p>The aim of the game is to test the player's ability to monitor their trajectory in the environment relative to the start location point to different locations in the environment. 
-                      The game is available on iPad and has been developed keeping in mind the requirements of the target audience.</p>
-                    
-                    <p>The project "SPACE" demonstrates my expertise in game development and my ability to design solutions that cater to specific needs. 
-                      It highlights my skills in Unity development and showcases my ability to develop games that have a positive impact on society.</p>
-                  </div>
-                  <p class="tech-Stack"  style="display: none;">#Unity  #AI</p>
-
-                </a>
-              </div>
-
-              <div class="col-md-6">
-                <a href="#" id="portfolio-card" 
-                data-projectPath = "DuelX"  
-                data-projectName ="DuelX" 
-                data-projectTitle="2D multiplayer board game" 
-                data-localFileName ="Duel X.apk"
-                data-onlineUrl = "">
-                  
-                  <img src="#"  class="img-responsive" alt="">
-                  <h3 class="h5">Placeholder Heading</h3>
-                  <div class="project-decription" style="display: none;">
-                    <p>Its a 2d multiplayer board game developed for Mobile (iOS and Android), Browsers (HTML5) for mobile and PC. It is an educational number game, helping students advance in multiplication and memorization of tables.</p>
-                  </div>
-                  <p class="tech-Stack"  style="display: none;">#Unity  #Multiplayer  #AI</p>
-
-                </a>
-              </div>
-              
-              <div class="col-md-6">
-                <a href="#" id="portfolio-card" 
-                data-projectPath = "PrisionBreak"  
-                data-projectName ="Prison Escape Game 2020: Grand" 
-                data-projectTitle="3D Third person Stealth Game" 
-                data-localFileName =""
-                data-onlineUrl = "https://play.google.com/store/apps/details?id=com.was.grand.prison.escape.plan.jailbreak">
-                  
-                  <img src="#"  class="img-responsive" alt="">
-                  <h3 class="h5">Placeholder Heading</h3>
-                  <div class="project-decription" style="display: none;">
-                    <p>"Prison Escape Game 2020: Grand" is a thrilling third-person stealth game that challenges players to break out of a high-security prison using their wits and cunning. 
-                      Developed using Unity for Android</p>
-                    <p>As a player, you'll take on the role of a prisoner who is determined to escape from prison and gain their freedom. 
-                      To do so, you'll need to complete a series of challenging missions that require you to navigate through the prison's various levels, avoiding guards and other obstacles along the way.</p>
-                  </div>
-                  <p class="tech-Stack"  style="display: none;">#Unity</p>
-
-                </a>
-              </div>
-
-              <div class="col-md-6">
-                <a href="#" id="portfolio-card" 
-                data-projectPath = "SpecialOps"  
-                data-projectName ="Special Ops FPS Gun Strike 3d" 
-                data-projectTitle="3rd person action shooting" 
-                data-localFileName =""
-                data-onlineUrl = "https://play.google.com/store/apps/details?id=com.was.cover.shooter.critical.strike.force">
-                  
-                  <img src="#"  class="img-responsive" alt="">
-                  <h3 class="h5">Placeholder Heading</h3>
-                  <div class="project-decription" style="display: none;">
-                    <p>3rd person action shooting game that is perfect for fans of the shooter genre. Developed using Unity.</p>
-                    <p>players take on the role of a special ops agent tasked with completing a series of challenging missions. 
-                      With a variety of weapons at their disposal, players must use their tactical skills and quick reflexes to take down enemy forces and complete objectives.</p>
-                  </div>
-                  <p class="tech-Stack"  style="display: none;">#Unity</p>
-
-                </a>
-              </div>
-
-            </div>
-
+            <div class="row" id="portfilioShowcase"> </div>
           </div>
         </div>
 
@@ -268,29 +179,31 @@ window.onload
      scrollRevelation('.card');
   });
 
-  var elementsWithId = document.querySelectorAll("#portfolio-card");
+  var portfolioPlaceholder = document.getElementById("portfilioShowcase");
+  var portfolioPageLink = "./Portfolio.html";
+  portfolioPlaceholder.innerHTML = "";
+  
+  fetch('./assets/portfolio.json').then(response => response.json()).then(data => {
 
-  // Loop through the elements and do something with them
-  for (var i = 0; i < elementsWithId.length; i++) {
-    elementsWithId[i].addEventListener("click", PortfolioClicked);
-    var projectPath = elementsWithId[i].getAttribute("data-projectPath");
-    elementsWithId[i].getElementsByClassName("img-responsive")[0].src = "./assets/Projects/"+projectPath+"/thumbnail.jpg";
-    elementsWithId[i].getElementsByClassName("h5")[0].innerText = elementsWithId[i].getAttribute("data-projectName");
-  }
+    for (let i = 0; i < data.length; i++) {
+      const title= data[i].name;
+      const imgPath= "./assets/Projects/"+ data[i].path + "/thumbnail.jpg";
+      const htmlBody = '<div class="col-md-6"> <a class="portfolio-card" data-portfolioId ='+i+'> <img src='+ imgPath +' class="img-responsive"> <h3 class="h5">'+title+'</h3> </a> </div>';
+      portfolioPlaceholder.insertAdjacentHTML("beforeend", htmlBody);
+    }
 
-  function PortfolioClicked(event){
+    var pClickHandler = document.getElementsByClassName("portfolio-card");
+    for (let i = 0; i < pClickHandler.length; i++) {
+      pClickHandler[i].addEventListener("click", PortfolioClicked);
+    }
 
-    var pageData = {};
-    pageData["projectPath"] = event.target.parentNode.getAttribute("data-projectPath");
-    pageData["projectName"] = event.target.parentNode.getAttribute("data-projectName");
-    pageData["projectTitle"] = event.target.parentNode.getAttribute("data-projectTitle");
-    pageData["projectDescription"] = event.target.parentNode.getElementsByClassName("project-decription")[0].innerHTML;
-    pageData["techStack"] = event.target.parentNode.getElementsByClassName("tech-Stack")[0].innerHTML;
-    pageData["localFileName"] = event.target.parentNode.getAttribute("data-localFileName");
-    pageData["demoLink"] = event.target.parentNode.getAttribute("data-onlineUrl");
+  });
 
-    sessionStorage.setItem("portfolioData", JSON.stringify(pageData));
-    window.location.replace("Portfolio.html");
+  
+
+  function PortfolioClicked(event) {
+    sessionStorage.setItem("PortfolioId", event.target.parentNode.getAttribute("data-portfolioId"));
+    window.location.assign("portfolio.html");
   }
 
 }

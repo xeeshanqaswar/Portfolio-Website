@@ -97,18 +97,21 @@
             <div class="work-experience">
               <small class="date">2020 - Present</small>
               <h3 class="h5 date-title">Senior Unity Engineer - <a href="https://www.geniteam.com/" title="Create professionnal website">GenITeam Solutions</a></h3>
-              <p>I worked as a Development Lead and played a crucial role in overseeing the team's day-to-day activities.</p>
+              <p>I am working as a Development Lead and played a crucial role in overseeing the team's day-to-day activities.</p>
                 <p>One of my primary responsibilities was to make design decisions that aligned with the company's goals and objectives.
                 I worked closely with stakeholders to understand their needs and preferences, then translated these requirements into actionable plans that the team could execute on.</p>
             </div>
 
-            <div class="work-experience">
+            <div class="work-experience hidden-content" style="display: none;">
               <small class="date">2019 - 2020</small>
               <h3 class="h5 date-title">Software Engineer - <a href="https://ozitechnology.com/" title="">OZI Technologies</a></h3>
               <p>I worked as a Software Engineer, specializing in Unity game development. 
                 Working as part of a team, I collaborated with my colleagues to create engaging and immersive gaming experiences for our clients.</p>
               <p>My responsibilities included developing and maintaining game systems, debugging and troubleshooting issues, and implementing new features as needed. 
                 I worked closely with the design team to ensure that our games were visually stunning, while also being optimized for performance.</p>
+            </div>
+            <div class = "text-center">
+              <button class="btn btn-link" id="show-more-button">Show More</button>
             </div>
           </div>
         </div>
@@ -216,6 +219,21 @@ window.onload
     sessionStorage.setItem("PortfolioId", event.target.parentNode.getAttribute("data-portfolioId"));
     window.location.assign("Portfolio.html");
   }
+
+
+  // Show More Button functionality
+  var showMoreButton = document.getElementById('show-more-button');
+  var hiddenContent = document.querySelector('.hidden-content');
+
+  showMoreButton.addEventListener('click', function() {
+    if (hiddenContent.style.display == 'none') {
+      hiddenContent.style.display = 'block';
+      showMoreButton.textContent = 'Show Less';
+    } else {
+      hiddenContent.style.display = 'none';
+      showMoreButton.textContent = 'Show More';
+    }
+  });
 
 }
 

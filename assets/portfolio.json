@@ -26,7 +26,7 @@
         "fileName": "",
         "onlineUrl": "https://play.google.com/store/apps/details?id=com.was.grand.prison.escape.plan.jailbreak",
         "hasPromoVideo": "0",
-        "techStack": "#Unity",
+        "techStack": "#Unity  #C#",
         "description": "<p>'Prison Escape Game 2020: Grand' is a thrilling third-person stealth game that challenges players to break out of a high-security prison using their wits and cunning. Developed using Unity for Android</p> <p>As a player, you'll take on the role of a prisoner who is determined to escape from prison and gain their freedom. To do so, you'll need to complete a series of challenging missions that require you to navigate through the prison's various levels, avoiding guards and other obstacles along the way.</p>"
     },
     {
@@ -37,6 +37,16 @@
         "onlineUrl": "https://play.google.com/store/apps/details?id=com.was.cover.shooter.critical.strike.force",
         "hasPromoVideo": "0",
         "techStack": "#Unity",
+        "description": "<p>3rd person action shooting game that is perfect for fans of the shooter genre. Developed using Unity.</p> <p>players take on the role of a special ops agent tasked with completing a series of challenging missions. With a variety of weapons at their disposal, players must use their tactical skills and quick reflexes to take down enemy forces and complete objectives.</p>"
+    },
+    {
+        "name": "The Lost Conquerors",
+        "title": "3rd person action Zombie Shooter",
+        "path": "LConquerors",
+        "fileName": "",
+        "onlineUrl": "https://www.youtube.com/watch?v=OfXjIj2aJ24&ab_channel=zeeshanqaswar",
+        "hasPromoVideo": "1",
+        "techStack": "#UnrealEngine  #BehaviourTrees",
         "description": "<p>3rd person action shooting game that is perfect for fans of the shooter genre. Developed using Unity.</p> <p>players take on the role of a special ops agent tasked with completing a series of challenging missions. With a variety of weapons at their disposal, players must use their tactical skills and quick reflexes to take down enemy forces and complete objectives.</p>"
     }
 ]

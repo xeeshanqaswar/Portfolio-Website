@@ -62,7 +62,7 @@
               <br>
               <h3 class="h5 date-title">Showcase</h3>
               <a id ="downloadableFile" href="#">Download File</a> &nbsp; &nbsp;
-              <a id ="onlineUrl" href="#">Try out Application</a>
+              <a id ="onlineUrl" href="#">Online URL</a>
               
               <div class="row">
                 
@@ -154,7 +154,9 @@
     // Updating Images
     document.getElementById('promo-image').src = "./assets/Projects/"+data[portfolioId].path+"/promo.jpg";
     document.getElementById('promo-video').src = "./assets/Projects/"+data[portfolioId].path+"/promo.mp4";
-    document.getElementById("Portfolio-1").src = "./assets/Projects/"+data[portfolioId].path+"/1.jpg";
+    
+    
+    document.getElementById("Portfolio-1").src =  "./assets/Projects/"+data[portfolioId].path+"/1.jpg";
     document.getElementById("Portfolio-2").src = "./assets/Projects/"+data[portfolioId].path+"/2.jpg";
     document.getElementById("Portfolio-3").src = "./assets/Projects/"+data[portfolioId].path+"/3.jpg";
     document.getElementById("Portfolio-4").src = "./assets/Projects/"+data[portfolioId].path+"/4.jpg";
@@ -184,7 +186,7 @@
 
     // Updating Online URL
     if (onlineUrl != "") {
-      onlineUrlId.setAttribute("href", pageData["demoLink"]);
+      onlineUrlId.setAttribute("href", onlineUrl);
       onlineUrlId.setAttribute("target","_blank");
     }
     else{

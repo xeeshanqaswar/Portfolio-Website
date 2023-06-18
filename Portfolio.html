@@ -47,7 +47,7 @@
             <div class="work-experience">
               
               <p>
-                <video autoplay width="100%"> <source src="./assets/Projects/Space/promo.mp4" id="promo-video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /> </video>
+                <video id="promo-video" autoplay width="100%"> </video>
                 <img src="./assets/Projects/Space/thumbnail.jpg" alt="" id="promo-image" width="100%">
               </p>
               
@@ -144,6 +144,7 @@
   const portfolioId = sessionStorage.getItem("PortfolioId");
 
   fetch('./assets/portfolio.json').then(response => response.json()).then(data => {
+    // debugger
     
     // Updating Content 
     document.getElementById("projectName").innerText = data[portfolioId].name;
@@ -153,8 +154,17 @@
     
     // Updating Images
     document.getElementById('promo-image').src = "./assets/Projects/"+data[portfolioId].path+"/promo.jpg";
-    document.getElementById('promo-video').src = "./assets/Projects/"+data[portfolioId].path+"/promo.mp4";
+
+    // Creating video player
+    var video = document.getElementById('promo-video');
+    var source = document.createElement('source');
     
+    source.setAttribute('src', "./assets/Projects/"+data[portfolioId].path+"/promo.mp4");
+    source.setAttribute('type', 'video/mp4');
+
+    video.appendChild(source);
+    video.play();
+    // *****
     
     document.getElementById("Portfolio-1").src =  "./assets/Projects/"+data[portfolioId].path+"/1.jpg";
     document.getElementById("Portfolio-2").src = "./assets/Projects/"+data[portfolioId].path+"/2.jpg";

@@ -47,8 +47,8 @@
             <div class="work-experience">
               
               <p>
-                <video id="promo-video" autoplay width="100%"> </video>
-                <img src="./assets/Projects/Space/thumbnail.jpg" alt="" id="promo-image" width="100%">
+                <video id="promo-video" style="display: none;" autoplay width="100%"> </video>
+                <img src="./assets/Projects/Space/thumbnail.jpg" style="display: none;" alt="" id="promo-image" width="100%">
               </p>
               
               <br>
@@ -152,32 +152,31 @@
     document.getElementById("project-decription").innerHTML = data[portfolioId].description;
     document.getElementById("tech-Stack").innerHTML = data[portfolioId].techStack;
     
-    // Updating Images
-    document.getElementById('promo-image').src = "./assets/Projects/"+data[portfolioId].path+"/promo.jpg";
+    if (data[portfolioId].hasPromoVideo == "1") {
 
-    // Creating video player
-    var video = document.getElementById('promo-video');
-    var source = document.createElement('source');
-    
-    source.setAttribute('src', "./assets/Projects/"+data[portfolioId].path+"/promo.mp4");
-    source.setAttribute('type', 'video/mp4');
+      document.getElementById('promo-video').parentNode.style.display = "block";
 
-    video.appendChild(source);
-    video.play();
-    // *****
-    
+      // Creating video player
+      var video = document.getElementById('promo-video');
+      var source = document.createElement('source');
+      source.setAttribute('src', "./assets/Projects/"+data[portfolioId].path+"/promo.mp4");
+      source.setAttribute('type', 'video/mp4');
+      video.appendChild(source);
+      video.play();
+
+    }
+    else{
+      
+      document.getElementById('promo-image').src = "./assets/Projects/"+data[portfolioId].path+"/promo.jpg";
+      document.getElementById('promo-image').style.display = "block";
+    }
+
+    // Updating portfolio Images
     document.getElementById("Portfolio-1").src =  "./assets/Projects/"+data[portfolioId].path+"/1.jpg";
     document.getElementById("Portfolio-2").src = "./assets/Projects/"+data[portfolioId].path+"/2.jpg";
     document.getElementById("Portfolio-3").src = "./assets/Projects/"+data[portfolioId].path+"/3.jpg";
     document.getElementById("Portfolio-4").src = "./assets/Projects/"+data[portfolioId].path+"/4.jpg";
     
-    if (data[portfolioId].hasPromoVideo == "1") {
-      document.getElementById('promo-image').style.display = "none";
-    }
-    else{
-      document.getElementById('promo-video').parentNode.style.display = "none";
-    }
-
     // Update URL and File
     const downloadableFile = document.getElementById("downloadableFile");
     const onlineUrlId = document.getElementById("onlineUrl");

@@ -47,7 +47,7 @@
             <div class="work-experience">
               
               <p>
-                <video id="promo-video" style="display: none;" autoplay width="100%"> </video>
+                <iframe id="promo-video"  width="100%" style="display: none;" src="https://www.youtube.com/embed/tgbNymZ7vqY"> </iframe>
                 <img src="./assets/Projects/Space/thumbnail.jpg" style="display: none;" alt="" id="promo-image" width="100%">
               </p>
               
@@ -152,18 +152,11 @@
     document.getElementById("project-decription").innerHTML = data[portfolioId].description;
     document.getElementById("tech-Stack").innerHTML = data[portfolioId].techStack;
     
-    if (data[portfolioId].hasPromoVideo == "1") {
-
-      document.getElementById('promo-video').parentNode.style.display = "block";
-
+    if (data[portfolioId].hasPromoVideo != null) {
       // Creating video player
       var video = document.getElementById('promo-video');
-      var source = document.createElement('source');
-      source.setAttribute('src', "./assets/Projects/"+data[portfolioId].path+"/promo.mp4");
-      source.setAttribute('type', 'video/mp4');
-      video.appendChild(source);
-      video.play();
-
+      video.style.display = "block";
+      video.setAttribute('src', data[portfolioId].hasPromoVideo);
     }
     else{
       

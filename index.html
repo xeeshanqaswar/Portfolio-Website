@@ -221,7 +221,7 @@ window.onload
     for (let i = 0; i < data.length; i++) {
       const title= data[i].name;
       const imgPath= "./assets/Projects/"+ data[i].path + "/thumbnail.jpg";
-      const htmlBody = '<div class="col-md-6"> <a class="portfolio-card" href="javascript:void(0)" data-portfolioId ='+i+'> <img src='+ imgPath +' class="img-responsive"> <h3 class="h5">'+title+'</h3> </a> </div>';
+      const htmlBody = '<div class="col-md-6" style= "margin-bottom: 20px"> <a class="portfolio-card" href="javascript:void(0)" data-portfolioId ='+i+'> <img src='+ imgPath +' class="img-responsive"> <h3 class="h5">'+title+'</h3> </a> </div>';
       portfolioPlaceholder.insertAdjacentHTML("beforeend", htmlBody);
     }
 

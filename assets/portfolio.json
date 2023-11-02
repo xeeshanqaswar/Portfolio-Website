@@ -5,9 +5,9 @@
       "path": "GIJoe",
       "fileName": "",
       "onlineUrl": "",
-      "hasPromoVideo": "https://www.youtube.com/watch?v=zWeUrH3g4AU&ab_channel=IGN",
+      "hasPromoVideo": "https://www.youtube.com/embed/zWeUrH3g4AU?si=HMrDmXt9H2XBDnye",
       "techStack": "#Unity  #Multiplayer #Playstation #XBOX #PC",
-      "description": "<p>Cobra is a retro side-scrolling beat 'em up. Play as one of the legendary G.I. JOE characters, including Duke, Scarlett, Roadblock, Snake Eyes, and more. Defeat hordes of Cobra troopers, Vipers, Crimson Guards and more of Cobra's malevolent machinations..</p>"
+      "description": "<p>Cobra is a retro side-scrolling beat 'em up. Play as one of the legendary G.I. JOE characters, including Duke, Scarlett, Roadblock, Snake Eyes, and more. Defeat hordes of Cobra troopers, Vipers, Crimson Guards and more of Cobra's malevolent machinations.</p> <p>As the lead developer, my role entails overseeing the comprehensive multiplayer implementation of the game, working in partnership with developers from 'Maple Powered Games', utilizing Photon Fusion for this specific task.</p>"
     },
     {
       "name": "S.P.A.C.E",
@@ -15,7 +15,7 @@
       "path": "Space",
       "fileName": "",
       "onlineUrl": "",
-      "hasPromoVideo": "https://youtu.be/Eisi_upeKg4",
+      "hasPromoVideo": "https://www.youtube.com/embed/Eisi_upeKg4?si=fjWgltuGIYeahdSN",
       "techStack": "#Unity  #AI #Localization",
       "description": "<p>'S.P.A.C.E' aka Singapore Explorer is an innovative simulation designed using Unity that I developed for the Singapore-ETH Centre. Based on research conducted by esteemed PhDs from Singapore Eth and aimed to detect varying degrees of cognitive impairment in patients suffering from dementia. Designed to incorporate a range of spatial tasks that effectively assess different aspects of a player's spatial knowledge.</p> <p>The aim of the simulation is to test the player's ability to monitor their trajectory in the environment relative to the start location point to different locations in the environment. The game is available on iPad and has been developed keeping in mind the requirements of the target audience.</p> <p>Demonstrates my expertise in game development and my ability to design solutions that cater to specific needs. In my role as Development Lead, I was responsible for managing a team of three highly-skilled mid-level developers. One of the most critical challenges I faced was communicating and comprehending the research findings and incorporating them to produce an immersive and interactive game experience.</p>"
     },
@@ -35,7 +35,7 @@
         "path": "LConquerors",
         "fileName": "",
         "onlineUrl": "",
-        "hasPromoVideo": "https://youtu.be/OfXjIj2aJ24",
+        "hasPromoVideo": "https://www.youtube.com/embed/OfXjIj2aJ24?si=QaLwwjhSLIHe7HWa",
         "techStack": "#UnrealEngine  #BehaviourTrees #TPS #PC",
         "description": "<p>I successfully completed my university's Final Year Project (FYP) utilizing Unreal Engine 4. The project focused on creating immersive third-person shooting mechanics and an advanced AI system using behavior trees. I designed and implemented responsive shooting controls, aiming mechanics, and satisfying feedback to deliver an engaging player experience. Additionally, I developed an AI system with behavior trees that allowed AI-controlled characters to exhibit human-like behaviors such as taking cover, flanking, and coordinating attacks. Throughout the project, I adhered to industry-standard practices, optimized performance, and conducted playtesting sessions to ensure a polished and enjoyable gameplay experience.</p> <p>My university FYP project demonstrates my proficiency in game development and showcases my ability to design and execute complex projects within defined timeframes. By successfully implementing third-person shooting mechanics and an advanced AI system using behavior trees, I showcased my technical skills in Unreal Engine 4 while delivering an immersive and dynamic gameplay experience. This project is a testament to my passion for game development, my commitment to industry standards, and my ability to solve complex technical challenges in order to deliver high-quality projects.</p>"
     },

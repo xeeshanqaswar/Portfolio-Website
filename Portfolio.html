@@ -152,7 +152,7 @@
     document.getElementById("project-decription").innerHTML = data[portfolioId].description;
     document.getElementById("tech-Stack").innerHTML = data[portfolioId].techStack;
     
-    if (data[portfolioId].hasPromoVideo != null) {
+    if (data[portfolioId].hasPromoVideo != "") {
       // Creating video player
       var video = document.getElementById('promo-video');
       video.style.display = "block";

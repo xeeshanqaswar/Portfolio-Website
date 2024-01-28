@@ -10,9 +10,12 @@
 
 
 
+
 (function($) {
   "use strict";
 
+
+  var jsonUrl = "https://xeeshanqaswar.github.io/File-Hosting/jsonfiles/game.json";
 
   // back to top - start
   // --------------------------------------------------
@@ -311,30 +314,7 @@
 
   // portfolio carousel - start
   // --------------------------------------------------
-  $('#portfolio-carousel').owlCarousel({
-    nav:true,
-    margin:0,
-    loop:true,
-    dots:false,
-    smartSpeed:700,
-    responsive:{
-      0:{
-        items:1
-      },
-      380:{
-        items:2
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:4
-      },
-      1920:{
-        items:4
-      }
-    }
-  });
+
 
   $('#portfolio-carousel-2').owlCarousel({
     nav:true,
@@ -364,124 +344,33 @@
     }
   });
 
-  $('#portfolio-carousel-3').owlCarousel({
-    items:1,
-    nav:true,
-    margin:0,
-    loop:true,
-    dots:false,
-    autoplay:true,
-    smartSpeed:1000,
-    autoplayTimeout:6000,
-    autoplayHoverPause:true,
-  });
+  fetch(jsonUrl)
+    .then(response => {
+      if (!response.ok) {
+      throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
 
-  $('#details-image-carousel').owlCarousel({
-    items:1,
-    margin:0,
-    nav:false,
-    loop:true,
-    autoplay:true,
-    smartSpeed:1000,
-    // animateIn:'fadeIn',
-    autoplayTimeout:6000,
-    autoplayHoverPause:true
-  });
+      for (let i = 0; i < 4 ; i++){
+        var newItem= `<div class="item">
+                      <a href="singlePortfolio.html" class="portfolio-fullimage add-effect">
+                        <img src="${data[i].thumbnail}" alt="image_not_found">
+                        <span class="item-content-2">
+                          <strong class="item-title">${data[i].name}</strong>
+                          <small class="item-brand">${data[i].tagline}</small>
+                        </span>
+                      </a>
+                    </div>`;
+        $('#portfolio-carousel-2').owlCarousel('add', newItem).owlCarousel('update');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching JSON:', error.message);
+    });
+  
   // portfolio carousel - end
-  // --------------------------------------------------
-
-
-  // shop carousel - start
-  // --------------------------------------------------
-  $('#shop-carousel').owlCarousel({
-    nav:true,
-    margin:0,
-    loop:true,
-    margin:30,
-    dots:false,
-    smartSpeed:700,
-    responsive:{
-      0:{
-        items:1
-      },
-      480:{
-        items:2
-      },
-      580:{
-        items:2
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:4
-      },
-      1920:{
-        items:4
-      }
-    }
-  });
-  // shop carousel - end
-  // --------------------------------------------------
-
-
-  // team carousel - start
-  // --------------------------------------------------
-  $('#team-carousel').owlCarousel({
-    nav:true,
-    loop:true,
-    margin:30,
-    dots:false,
-    smartSpeed:1000,
-    responsive:{
-      0:{
-        items:1
-      },
-      680:{
-        items:2
-      },
-      767:{
-        items:3
-      },
-      1000:{
-        items:3
-      }
-    }
-  });
-  // team carousel - end
-  // --------------------------------------------------
-
-
-  // property carousel - start
-  // --------------------------------------------------
-  $('#property-carousel').owlCarousel({
-    nav:true,
-    margin:30,
-    loop:true,
-    dots:false,
-    autoplay:true,
-    smartSpeed:1000,
-    autoplayTimeout:6000,
-    autoplayHoverPause:true,
-    responsive:{
-      0:{
-        items:1
-      },
-      480:{
-        items:2
-      },
-      580:{
-        items:2
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:3
-      }
-    }
-  });
-  // property carousel - end
   // --------------------------------------------------
 
 

@@ -355,7 +355,7 @@
 
       for (let i = 0; i < 4 ; i++){
         var newItem= `<div class="item">
-                      <a href="singlePortfolio.html" class="portfolio-fullimage add-effect">
+                      <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect">
                         <img src="${data[i].thumbnail}" alt="image_not_found">
                         <span class="item-content-2">
                           <strong class="item-title">${data[i].name}</strong>

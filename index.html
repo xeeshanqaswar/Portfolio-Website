@@ -276,5 +276,51 @@
 		<!-- custom - jquery include -->
 		<script src="assets/js/custom.js"></script>
 
+		<script>
+
+			$(document).ready(function (){
+
+				document.querySelector(".portfolio-section.mod .row").innerHTML = " ";
+
+				fetch("https://xeeshanqaswar.github.io/File-Hosting/jsonfiles/game.json")
+				.then(response => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+					return response.json();
+				})
+				.then(data => {
+
+					for (let i = 0; i < 6 ; i++){
+						var newItem= `<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect" data-aos="fade-up">
+										<img src="${data[i].thumbnail}" alt="image_not_found">
+										<span class="item-content-2">
+											<strong class="item-title">${data[i].name}</strong>
+											<small class="item-brand">${data[i].tagline}</small>
+										</span>
+										</a>
+									</div>`;
+						document.querySelector(".portfolio-section.mod .container .row").innerHTML += newItem;
+					}
+
+					AOS.init({
+						once: true,
+						duration: 800,
+						easing: 'ease'
+					});
+				})
+				.catch(error => {
+					console.error('Error fetching JSON:', error.message);
+				});
+
+
+				
+			});
+
+
+
+		</script>
+
 	</body>
 </html>

@@ -331,44 +331,44 @@
     }
   });
 
-  fetch(jsonUrl)
-    .then(response => {
-      if (!response.ok) {
-      throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
+  // fetch(jsonUrl)
+  //   .then(response => {
+  //     if (!response.ok) {
+  //     throw new Error('Network response was not ok');
+  //     }
+  //     return response.json();
+  //   })
+  //   .then(data => {
 
-      document.querySelector(".portfolio-section.mod .row").innerHTML = " ";
-      for (let i = 0; i < 6 ; i++){
-        // var newItem= `<div class="item">
-        //               <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect">
-        //                 <img src="${data[i].thumbnail}" alt="image_not_found">
-        //                 <span class="item-content-2">
-        //                   <strong class="item-title">${data[i].name}</strong>
-        //                   <small class="item-brand">${data[i].tagline}</small>
-        //                 </span>
-        //               </a>
-        //             </div>`;
+  //     document.querySelector(".portfolio-section.mod .row").innerHTML = " ";
+  //     for (let i = 0; i < 6 ; i++){
+  //       // var newItem= `<div class="item">
+  //       //               <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect">
+  //       //                 <img src="${data[i].thumbnail}" alt="image_not_found">
+  //       //                 <span class="item-content-2">
+  //       //                   <strong class="item-title">${data[i].name}</strong>
+  //       //                   <small class="item-brand">${data[i].tagline}</small>
+  //       //                 </span>
+  //       //               </a>
+  //       //             </div>`;
 
-        //data-aos="fade-up" 
-        var newItem= `<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect" data-aos="" data-aos-delay="100">
-                          <img src="${data[i].thumbnail}" alt="image_not_found">
-                          <span class="item-content-2">
-                            <strong class="item-title">${data[i].name}</strong>
-                            <small class="item-brand">${data[i].tagline}</small>
-                          </span>
-                        </a>
-                      </div>`;
-        document.querySelector(".portfolio-section.mod .container .row").innerHTML += newItem;
-        // $('#portfolio-carousel-2').owlCarousel('add', newItem).owlCarousel('update');
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching JSON:', error.message);
-    });
+  //       //data-aos="fade-up" 
+  //       var newItem= `<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  //                       <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect" data-aos="fade-up">
+  //                         <img src="${data[i].thumbnail}" alt="image_not_found">
+  //                         <span class="item-content-2">
+  //                           <strong class="item-title">${data[i].name}</strong>
+  //                           <small class="item-brand">${data[i].tagline}</small>
+  //                         </span>
+  //                       </a>
+  //                     </div>`;
+  //       document.querySelector(".portfolio-section.mod .container .row").innerHTML += newItem;
+  //       // $('#portfolio-carousel-2').owlCarousel('add', newItem).owlCarousel('update');
+  //     }
+  //   })
+  //   .catch(error => {
+  //     console.error('Error fetching JSON:', error.message);
+  //   });
   
   // portfolio carousel - end
   // --------------------------------------------------
@@ -408,11 +408,11 @@
 
   // scroll animation - start
   // --------------------------------------------------
-  AOS.init({
-    once: true,
-    duration: 800,
-    easing: 'ease'
-  });
+  // AOS.init({
+  //   once: true,
+  //   duration: 800,
+  //   easing: 'ease'
+  // });
   // scroll animation - end
   // --------------------------------------------------
 

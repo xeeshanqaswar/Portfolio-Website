@@ -1,16 +1,3 @@
-// ==================================================
-// Project Name  :  Afkar - HTML Template
-// File          :  JS Base
-// Version       :  1.1.0
-// Last change   :  29 April 2020
-// Author        :  creative-wp -->> (https://themeforest.net/user/creative-wp)
-// Developer:    :  Rakibul Islam Dewan -->> (dj.rakibul690@gmail.com)
-// ==================================================
-
-
-
-
-
 (function($) {
   "use strict";
 

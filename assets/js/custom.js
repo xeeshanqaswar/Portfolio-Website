@@ -353,17 +353,30 @@
     })
     .then(data => {
 
-      for (let i = 0; i < 4 ; i++){
-        var newItem= `<div class="item">
-                      <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect">
-                        <img src="${data[i].thumbnail}" alt="image_not_found">
-                        <span class="item-content-2">
-                          <strong class="item-title">${data[i].name}</strong>
-                          <small class="item-brand">${data[i].tagline}</small>
-                        </span>
-                      </a>
-                    </div>`;
-        $('#portfolio-carousel-2').owlCarousel('add', newItem).owlCarousel('update');
+      document.querySelector(".portfolio-section.mod .row").innerHTML = " ";
+      for (let i = 0; i < 6 ; i++){
+        // var newItem= `<div class="item">
+        //               <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect">
+        //                 <img src="${data[i].thumbnail}" alt="image_not_found">
+        //                 <span class="item-content-2">
+        //                   <strong class="item-title">${data[i].name}</strong>
+        //                   <small class="item-brand">${data[i].tagline}</small>
+        //                 </span>
+        //               </a>
+        //             </div>`;
+
+        //data-aos="fade-up" 
+        var newItem= `<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect" data-aos="" data-aos-delay="100">
+                          <img src="${data[i].thumbnail}" alt="image_not_found">
+                          <span class="item-content-2">
+                            <strong class="item-title">${data[i].name}</strong>
+                            <small class="item-brand">${data[i].tagline}</small>
+                          </span>
+                        </a>
+                      </div>`;
+        document.querySelector(".portfolio-section.mod .container .row").innerHTML += newItem;
+        // $('#portfolio-carousel-2').owlCarousel('add', newItem).owlCarousel('update');
       }
     })
     .catch(error => {

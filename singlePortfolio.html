@@ -74,7 +74,7 @@
 						<nav class="main-menu ul-li-right clearfix">
 							<ul class="clearfix">
 								<li><a href="#portfolio-section">My Works</a></li>
-								<li><a href="#service-section">Experiences</a></li>
+								<!-- <li><a href="#service-section">Experiences</a></li> -->
 								<li><a href="https://docs.google.com/document/d/1-1JnFdIgcGzauRHtnMjfhqkeILklMxCF/edit?usp=sharing&ouid=112006795001232809122&rtpof=true&sd=true" target="_blank">My Resume</a></li>
 								<li><a href="mailto:xeeshanqaswar@gmail.com">Say Hi</a></li>
 							</ul>
@@ -95,7 +95,7 @@
 						<li><a href="#service-section">Experiences</a></li>
 						<li><a href="https://docs.google.com/document/d/1-1JnFdIgcGzauRHtnMjfhqkeILklMxCF/edit?usp=sharing&ouid=112006795001232809122&rtpof=true&sd=true" target="_blank">My Resume</a></li>
 						<li><a href="mailto:xeeshanqaswar@gmail.com">Say Hi</a></li>
-					</ul>
+					</ul>	
 				</div>
 			</div>
 
@@ -345,10 +345,10 @@
 
 				fetch("https://xeeshanqaswar.github.io/File-Hosting/jsonfiles/game.json")
 				.then(response => {
-				if (!response.ok) {
-				throw new Error('Network response was not ok');
-				}
-				return response.json();
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.json();
 				})
 				.then(data => {
 					
@@ -388,12 +388,19 @@
 						
 						document.querySelector(".next").setAttribute('href', 'index.html');
 						document.querySelector(".next span").innerHTML = "Back to Home";
-					}	else{
+					}
+					else{
 						
 						document.querySelector(".next").setAttribute('href', 'singlePortfolio.html?Id='+ next);
 						document.querySelector(".next span").innerHTML = data[next].name;
 					}				
 
+
+					AOS.init({
+						once: true,
+						duration: 800,
+						easing: 'ease'
+					});
 
 				})
 				.catch(error => {

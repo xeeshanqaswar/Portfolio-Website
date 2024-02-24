@@ -148,7 +148,7 @@
 											<ul class="clearfix">
 												<li data-aos="fade-up" data-aos-delay="100">
 													<span>Try Demo</span>
-													<a href="#" class ="demoLink" target="_blank">Demonstration</a>
+													<a href="#" class ="demoLink" target="_blank">Click me!</a>
 												</li>
 											</ul>
 										</div>
@@ -352,13 +352,13 @@
 				})
 				.then(data => {
 					
-					document.querySelector(".demoLink").style.backgroundImage = data[index].url;
+					document.querySelector(".demoLink").setAttribute("href", data[index].url);
 					document.querySelector(".details-image").style.backgroundImage = `url(${data[index].thumbnail})`;
 					document.querySelector(".section-title h2").innerHTML = data[index].name;
 					document.querySelector(".section-title p").innerHTML = data[index].description;
 					document.querySelector(".clientName").innerHTML = data[index].client;
 					document.querySelector(".publishedDate").innerHTML = data[index].date;
-					
+
 					document.querySelector(".techStack").innerHTML = "";
 					data[index].stack.forEach(element => {
 						document.querySelector(".techStack").innerHTML += `<a href="#!">${element}</a>`;

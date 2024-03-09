@@ -350,7 +350,7 @@
 				})
 				.then(data => {
 
-					let previousIndex = index == 0? Object.keys(data).length - 1: (index - 1) % dataLength;
+					let previousIndex = index == 0? Object.keys(data).length - 1: (index - 1) %  Object.keys(data).length;
 					let previous =  data[previousIndex];
 					let current = data[index];
 					let nextIndex = (index + 1) % Object.keys(data).length;

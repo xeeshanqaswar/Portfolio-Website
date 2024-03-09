@@ -338,8 +338,6 @@
 		<script>
 			$(document).ready(function(){
 
-				var portfolioLimit = 4;
-
 				var urlParams = new URLSearchParams(window.location.search);
       			var index = urlParams.get('Id');
 
@@ -351,50 +349,39 @@
 					return response.json();
 				})
 				.then(data => {
-					
-					document.querySelector(".demoLink").setAttribute("href", data[index].url);
-					document.querySelector(".details-image").style.backgroundImage = `url(${data[index].thumbnail})`;
-					document.querySelector(".section-title h2").innerHTML = data[index].name;
-					document.querySelector(".section-title p").innerHTML = data[index].description;
-					document.querySelector(".clientName").innerHTML = data[index].client;
-					document.querySelector(".publishedDate").innerHTML = data[index].date;
+
+					let previousIndex = index == 0? Object.keys(data).length - 1: (index - 1) % dataLength;
+					let previous =  data[previousIndex];
+					let current = data[index];
+					let nextIndex = (index + 1) % Object.keys(data).length;
+					let next = data [nextIndex];
+
+					document.querySelector(".demoLink").setAttribute("href", current.url);
+					document.querySelector(".details-image").style.backgroundImage = `url(${current.thumbnail})`;
+					document.querySelector(".section-title h2").innerHTML = current.name;
+					document.querySelector(".section-title p").innerHTML = current.description;
+					document.querySelector(".clientName").innerHTML = current.client;
+					document.querySelector(".publishedDate").innerHTML = current.date;
 
 					document.querySelector(".techStack").innerHTML = "";
-					data[index].stack.forEach(element => {
+					current.stack.forEach(element => {
 						document.querySelector(".techStack").innerHTML += `<a href="#!">${element}</a>`;
 					});
 
 					document.querySelector(".portfolio-section div div div").innerHTML = "";
-					data[index].itemList.forEach(element => {
+					current.itemList.forEach(element => {
 						
-						var data = `<div class="portfolio-fullimage" data-aos="fade-up" data-aos-delay="100">
+						var dataBlock = `<div class="portfolio-fullimage" data-aos="fade-up" data-aos-delay="100">
 										<img src="${element}" alt="image_not_found">
 									</div>`;			
-						document.querySelector(".portfolio-section div div div").innerHTML += data;
+						document.querySelector(".portfolio-section div div div").innerHTML += dataBlock;
 					});
 
-					var previous = index -1;
-					var next = index + 1;
+					document.querySelector(".prev").setAttribute('href', 'singlePortfolio.html?Id='+ previousIndex);
+					document.querySelector(".prev span").innerHTML = previous.name;
 
-					if (previous < 0) {
-						document.querySelector(".prev").setAttribute('href', 'index.html');
-						document.querySelector(".prev span").innerHTML = "Back to Home";
-					}else{
-						document.querySelector(".prev").setAttribute('href', 'singlePortfolio.html?Id='+ previous);
-						document.querySelector(".prev span").innerHTML = data[previous].name;
-					}
-
-					if (next >= portfolioLimit) {
-						
-						document.querySelector(".next").setAttribute('href', 'index.html');
-						document.querySelector(".next span").innerHTML = "Back to Home";
-					}
-					else{
-						
-						document.querySelector(".next").setAttribute('href', 'singlePortfolio.html?Id='+ next);
-						document.querySelector(".next span").innerHTML = data[next].name;
-					}				
-
+					document.querySelector(".next").setAttribute('href', 'singlePortfolio.html?Id='+ nextIndex);
+					document.querySelector(".next span").innerHTML = next.name;
 
 					AOS.init({
 						once: true,

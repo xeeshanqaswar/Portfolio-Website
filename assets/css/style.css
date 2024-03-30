@@ -4467,7 +4467,8 @@ button {
 /* advertisement - end */
 /* portfolio details - start */
 .details-section .details-image {
-  min-height: 720px;
+  /* min-height: 720px; */
+  height: 60vh;
 }
 
 .details-section .details-image>img {

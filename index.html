@@ -300,6 +300,10 @@
 
 					let delayValue = 100;
 					for (let i = 0; i < Object.keys(data).length; i++) {
+
+						if (i == 5 || i == 6)
+							continue;
+
 						var newItem = `<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 										<a href="${"singlePortfolio.html?Id=" + i}" class="portfolio-fullimage add-effect" data-aos="fade-up" data-aos-delay="${delayValue * (i + 1)}">
 										<img src="${data[i].thumbnail}" alt="image_not_found">

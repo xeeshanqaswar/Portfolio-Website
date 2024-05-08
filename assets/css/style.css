@@ -5948,6 +5948,7 @@ button {
 .personal-banner {
   height: 100vh;
   max-height: 720px;
+  min-height: auto;
   background-size: auto;
   background-position: right top;
 }

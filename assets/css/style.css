@@ -5946,7 +5946,8 @@ button {
 /* home reset - end */
 /* banner section - start */
 .personal-banner {
-  min-height: 720px;
+  height: 100vh;
+  max-height: 720px;
   background-size: auto;
   background-position: right top;
 }
